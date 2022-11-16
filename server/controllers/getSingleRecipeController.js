@@ -7,7 +7,7 @@ const getSingleRecipe = asyncHandler(async (req, res) => {
     const recipe = await Recipe.findOne({ _id: recipeID })
     if (!recipe) {
         res.status(404)
-      throw new Error (`No task with id : ${recipeID}`);
+      throw new Error (`No recipe with id : ${recipeID}`);
     }
   
     return res.status(200).json({ recipe })
