@@ -2,10 +2,7 @@ const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
 const recipeSchema = new Schema({
-	author: {
-		type: String,
-		required: true
-	},
+	
 	title: {
 		type: String,
 		required: true
@@ -22,12 +19,23 @@ const recipeSchema = new Schema({
 		type: Array,
 		required: true
 	},
-    description: [String],
-    ingredients: [String]
+    description:String,
+   
 
-    owner: {
+    author: {
         type: mongoose.Types.objectId,
-        ref: "User"
+        ref: "User",
+	required: true
+    },
+   ingredients: {
+        type: mongoose.Types.objectId,
+        ref: "Ingredient",
+	   required: true
+    },
+  steps: {
+        type: mongoose.Types.objectId,
+        ref: "Step",
+	required: true
     }
 
 }, {timestamps: true });
