@@ -20,13 +20,10 @@
 ## Contributing
 
 ```bash
-  Fork the repo
-  Clone the repo to your local machine
-  cd to the projects 
-  npm intsall or yarn 
-  create a new branch and work on your feature
-  push to your forked repo 
-  Ask for pull request 
+ clone the repository
+create a feature branch from the development branch
+work in the feature branch and push
+file a PR from your feature branch to the remote development branch
 ```
 ## Installation
 
