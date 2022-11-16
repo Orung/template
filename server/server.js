@@ -3,6 +3,7 @@ const dotenv = require('dotenv')
 const cors = require('cors')
 const morgan = require('morgan')
 const { errorHandler, notFound } = require('./middlewares/errorMiddleware')
+const session = require('express-session');
 
 
 
@@ -14,6 +15,8 @@ app.use(cors())
 
 app.use(errorHandler)
 app.use(notFound)
+app.use(session({ secret: 'notagoodsecret' }))
+
 
 // Routes imports
 const testRoute = require('./routes/testRoutes')
