@@ -7,7 +7,7 @@
 
 ## Documentation
 
-[Link Documentation -- Coming Soon](https://c)
+[Link Documentation](https://c)
 
 
 ## Tech Stack
@@ -24,7 +24,7 @@ work in the feature branch and push
 file a PR from your feature branch to the remote development branch
 ```
 ## Installation
-https 
+
 ```bash
   npm intsall or yarn 
   npm run dev or yarn dev
