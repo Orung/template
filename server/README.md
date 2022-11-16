@@ -7,12 +7,10 @@
 
 ## Documentation
 
-[Link Documentation -- Coming soon](https://c)
+[Link Documentation -- Coming Soon](https://c)
 
 
 ## Tech Stack
-
-**Client:** React, Redux, TailwindCSS
 
 **Server:** Node, Express, Mongodb
 
@@ -20,15 +18,17 @@
 ## Contributing
 
 ```bash
- clone the repository
+   clone the repository
 create a feature branch from the development branch
 work in the feature branch and push
 file a PR from your feature branch to the remote development branch
 ```
 ## Installation
-
+https 
 ```bash
   npm intsall or yarn 
   npm run dev or yarn dev
 ```
     
+## Important 
+Please use the gitignore and add any env to the .env.example 
