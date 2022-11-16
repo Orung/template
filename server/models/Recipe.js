@@ -19,7 +19,6 @@ const recipeSchema = new Schema({
 		type: Array,
 		required: true
 	},
-    description:String,
    
 
     author: {
