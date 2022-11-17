@@ -1,26 +1,36 @@
 const asyncHandler = require("express-async-handler");
 const User = require("../models/User");
 
-
-
-
-exports.register = asyncHandler(async (req, res) => {
+const register = asyncHandler(async (req, res) => {
   try {
     const { fullname, username, email, password } = req.body
     // hash = await bcrypt.hash(password, 12)
     const user = new User({ fullname, username, email, password })
     await user.save();
     req.session.user_id = user._id;
-    console.log(user)
+
     res.send(`Welcome ${username},Your Registration Was Successful`)
-  } catch(error){
+  }catch(error){
     res.status(404);
     throw new Error(error);
   }
 })
 
+const login = asyncHandler(async (req, res) => {
+  const { email, password } = req.body
+  const user = await User.findOne({email: email}).select("+password")
 
-exports.updateProfile = asyncHandler(async (req, res) => {
+  if(!user ||  (!bcrypt.compare(password, user.password))) throw new Error("Email or Password not valid")
+
+  res.status(200).json({
+    status: "Success",
+    message: "Logged in successfully"
+  })
+
+})
+
+
+const updateProfile = asyncHandler(async (req, res) => {
   const { name, email, password } = req.body;
 
   try {
@@ -46,3 +56,8 @@ exports.updateProfile = asyncHandler(async (req, res) => {
 });
 
 
+module.exports = { 
+  register,
+  login,
+  updateProfile
+}
