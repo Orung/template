@@ -1,8 +1,11 @@
 import React from 'react'
+import DefaultWrapper from '../layouts/DefaultWrapper'
 
 const Index = () => {
   return (
-    <div className='text-red-500'>Index</div>
+   <DefaultWrapper>
+     <div className='text-red-500'>Index</div>
+   </DefaultWrapper>
   )
 }
 
