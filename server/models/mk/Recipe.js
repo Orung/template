@@ -22,19 +22,33 @@ const recipeSchema = new Schema({
 		type: Array,
 		required: true
 	},
+<<<<<<< HEAD
     description:String,
+=======
+   
+
+>>>>>>> 21d11fd3840cd0ec6938295b8cc688d6462b9fa8
     author: {
         type: mongoose.Types.objectId,
         ref: "User",
 	required: true
     },
    ingredients: {
+<<<<<<< HEAD
         type: mongoose.Types.objectId,
         ref: "Ingredient",
 	   required: true
     },
   steps: {
         type: mongoose.Types.objectId,
+=======
+        type: mongoose.Types.objectId,
+        ref: "Ingredient",
+	   required: true
+    },
+  steps: {
+        type: mongoose.Types.objectId,
+>>>>>>> 21d11fd3840cd0ec6938295b8cc688d6462b9fa8
         ref: "Step",
 	required: true
     }
