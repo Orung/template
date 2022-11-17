@@ -16,5 +16,5 @@ const stepSchema = new Schema({
     }
 }, {timestamps: true });
 
-const step = mongoose.model('Step', stepSchema);
-module.exports = step;
+const Step = mongoose.model('Step', stepSchema);
+module.exports = Step;
