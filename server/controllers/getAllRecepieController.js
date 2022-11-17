@@ -1,6 +1,6 @@
-const asyncHandler = require("express-async-handler");
+const asyncHandler = require('express-async-handler');
 
-const Recipe = require("../models/Recipe");
+const Recipe = require('../models/Recipe');
 /**
  * @desc Get Recepie list
  * @route GET
@@ -8,7 +8,7 @@ const Recipe = require("../models/Recipe");
  * @access Public
  */
 const getAllRecipes = asyncHandler(async (req, res) => {
-  const recipes = await Recipe.findAll().sort("createdAt");
+  const recipes = await Recipe.find().sort('createdAt');
   if (!recipes) {
     res.status(404);
     throw new Error(`No Recepies found`);
