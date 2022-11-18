@@ -1,13 +1,17 @@
+// IMPORT ALL NECCESSARY MODULES
 const express = require('express');
-const dotenv = require('dotenv');
 const cors = require('cors');
-const morgan = require('morgan');
-const { errorHandler, notFound } = require('./middlewares/errorMiddleware');
-const session = require('express-session');
-const dbConnect = require('./config/db');
 const multer = require('multer');
+const morgan = require('morgan');
+// const session = require('express-session');
+require('dotenv').config();
+const { errorHandler, notFound } = require('./middlewares/errorMiddleware');
+const dbConnect = require('./config/db');
+const userRoutes = require('./routes/userRoutes');
+const recipeRoutes = require('./routes/recipeRoutes')
 
-const app = express();
+const app = express(); // CREATE APP
+
 const fileStorage = multer.diskStorage({
   destination: (req, file, cb) => {
     cb(null, 'images');
@@ -26,26 +30,25 @@ const fileFilter = (req, file, cb) => {
   } else {
     cb(null, false);
   }
-};
-dotenv.config();
+}
+
 app.use(express.json());
 app.use(multer({ storage: fileStorage }).single('image'));
 app.use(cors());
 
-app.use(errorHandler);
-app.use(notFound);
-app.use(session({ secret: 'notagoodsecret' }));
+// app.use(session({ secret: 'notagoodsecret' }));
 
-// Routes imports
-const testRoute = require('./routes/testRoutes');
+// ROUTES CONFIGURATION: GLOBAL
+app.use('/api/v1/recipes', recipeRoutes);
+app.use('/api/v1/users', userRoutes)
 
-// Routes configurations
-app.use('/api/test', testRoute);
-
-// morgan logging configuration
-if (process.env.NODE_ENV === 'development') {
+// MORGAN LOGGING
+if(process.env.NODE_ENV === 'development') {
   app.use(morgan('dev'));
 }
+
+app.use(errorHandler);
+app.use(notFound);
 
 const PORT = process.env.PORT || 8000;
 dbConnect();
