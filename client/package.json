@@ -1,84 +1,63 @@
 {
-  "name": "recipeprint-frontend",
-  "version": "0.1.0",
-  "private": true,
-  "dependencies": {
-    "@testing-library/jest-dom": "^5.16.5",
-    "@testing-library/react": "^13.4.0",
-    "@testing-library/user-event": "^13.5.0",
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0",
-    "react-router-dom": "^6.4.3",
-    "react-scripts": "^5.0.1",
-    "web-vitals": "^2.1.4"
-  },
-  "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject",
-    "prepare": "husky install"
-  },
-  "eslintConfig": {
-    "extends": [
-      "react-app",
-      "react-app/jest"
-    ]
-  },
-  "browserslist": {
-    "production": [
-      ">0.2%",
-      "not dead",
-      "not op_mini all"
-    ],
-    "development": [
-      "last 1 chrome version",
-      "last 1 firefox version",
-      "last 1 safari version"
-    ]
-  },
-  "devDependencies": {
-    "autoprefixer": "^10.4.13",
-    "eslint": "^8.27.0",
-    "eslint-plugin-react": "^7.31.10",
-    "husky": "^8.0.0",
-    "lint-staged": "^13.0.3",
-    "postcss": "^8.4.19",
-    "prettier": "^2.7.1",
-    "tailwindcss": "^3.2.4"
-  },
-  "husky": {
-    "hooks": {
-      "applypatch-msg": "echo \"[Husky] applypatch-msg\"",
-      "pre-applypatch": "echo \"[Husky] pre-applypatch\"",
-      "post-applypatch": "echo \"[Husky] post-applypatch\"",
-      "pre-commit": "echo \"[Husky] pre-commit\"",
-      "pre-merge-commit": "echo \"[Husky] pre-merge-commit\"",
-      "prepare-commit-msg": "echo \"[Husky] prepare-commit-msg\"",
-      "commit-msg": "echo \"[Husky] commit-msg\"",
-      "post-commit": "echo \"[Husky] post-commit\"",
-      "pre-rebase": "echo \"[Husky] pre-rebase\"",
-      "post-checkout": "echo \"[Husky] post-checkout\"",
-      "post-merge": "echo \"[Husky] post-merge\"",
-      "pre-push": "echo \"[Husky] pre-push\"",
-      "pre-receive": "echo \"[Husky] pre-receive\"",
-      "update": "echo \"[Husky] update\"",
-      "post-receive": "echo \"[Husky] post-receive\"",
-      "post-update": "echo \"[Husky] post-update\"",
-      "reference-transaction": "echo \"[Husky] reference-transaction\"",
-      "push-to-checkout": "echo \"[Husky] push-to-checkout\"",
-      "pre-auto-gc": "echo \"[Husky] pre-auto-gc\"",
-      "post-rewrite": "echo \"[Husky] post-rewrite\"",
-      "sendemail-validate": "echo \"[Husky] sendemail-validate\"",
-      "fsmonitor-watchman": "echo \"[Husky] fsmonitor-watchman\"",
-      "p4-changelist": "echo \"[Husky] p4-changelist\"",
-      "p4-prepare-changelist": "echo \"[Husky] p4-prepare-changelist\"",
-      "p4-post-changelist": "echo \"[Husky] p4-post-changelist\"",
-      "p4-pre-submit": "echo \"[Husky] p4-pre-submit\"",
-      "post-index-change": "echo \"[Husky] post-index-change\""
+    "name": "recipeprint-frontend",
+    "version": "0.1.0",
+    "private": true,
+    "dependencies": {
+        "@testing-library/jest-dom": "^5.16.5",
+        "@testing-library/react": "^13.4.0",
+        "@testing-library/user-event": "^13.5.0",
+        "react": "^18.2.0",
+        "react-dom": "^18.2.0",
+        "react-router-dom": "^6.4.3",
+        "react-scripts": "^5.0.1",
+        "web-vitals": "^2.1.4"
+    },
+    "scripts": {
+        "start": "react-scripts start",
+        "build": "react-scripts build",
+        "test": "react-scripts test",
+        "eject": "react-scripts eject",
+        "prepare": "husky install",
+        "lint": "prettier --check .",
+        "format": "prettier --write ."
+    },
+    "eslintConfig": {
+        "extends": [
+            "react-app",
+            "react-app/jest"
+        ]
+    },
+    "browserslist": {
+        "production": [
+            ">0.2%",
+            "not dead",
+            "not op_mini all"
+        ],
+        "development": [
+            "last 1 chrome version",
+            "last 1 firefox version",
+            "last 1 safari version"
+        ]
+    },
+    "devDependencies": {
+        "autoprefixer": "^10.4.13",
+        "eslint": "^8.27.0",
+        "eslint-config-prettier": "^8.5.0",
+        "eslint-plugin-prettier": "^4.2.1",
+        "eslint-plugin-react": "^7.31.10",
+        "husky": "^8.0.0",
+        "lint-staged": "^13.0.3",
+        "postcss": "^8.4.19",
+        "prettier": "^2.7.1",
+        "tailwindcss": "^3.2.4"
+    },
+    "husky": {
+        "hooks": {
+            "pre-commit": "prettier --write . && git add -A ."
+        }
+    },
+    "lint": "eslint src --color",
+    "lint-staged": {
+        "**/*.js": "prettier --write --ignore-unknown"
     }
-  },
-  "lint": "eslint src --color",
-  "prettier": "prettier src -check",
-  "lint-staged": "lint-staged --config lint-staged.js"
 }
