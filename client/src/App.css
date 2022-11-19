@@ -36,3 +36,132 @@
         transform: rotate(360deg);
     }
 }
+
+.template .header-title {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 28px;
+    line-height: 34px;
+    text-align: center;
+    color: #000000;
+    margin-bottom: 24px;
+}
+
+.template .how-it-work {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 26px;
+    line-height: 150%;
+    color: #f89049;
+    margin-bottom: 6px;
+}
+
+.template .p-recipe {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 150%;
+    text-align: center;
+    color: #1e1e1e;
+}
+
+.template .number-section {
+    height: 70px;
+    background: #f67a24;
+    box-shadow: 0px 15.4205px 38.5512px rgba(217, 217, 217, 0.9);
+    font-family: 'Inter';
+    font-size: 26px;
+    line-height: 150%;
+}
+.text-change {
+    color: #1e1e1e;
+}
+.template .number-section::before {
+    border: 1px dashed #f67a24;
+    content: '';
+    position: absolute;
+    width: 227px;
+    left: 9rem;
+}
+.template .text-three::before {
+    display: none;
+}
+.mt-50 {
+    margin-top: 50.5px;
+}
+.template .step {
+    margin-top: 30px;
+    margin-bottom: 6px;
+}
+.template .step-all {
+    padding-left: 72px;
+    padding-right: 72px;
+}
+.template .sizing {
+    width: 502px;
+    height: 607px;
+}
+
+.template .img-section {
+    background: #ffeded;
+    border-radius: 8px;
+}
+.template .template-title {
+    font-family: 'Raleway';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 20.0684px;
+    line-height: 28px;
+    color: #a45118;
+}
+
+.template .btn-save,
+.template .btn-use:hover {
+    padding: 12px 24px;
+    gap: 10px;
+
+    width: 127px;
+    height: 40px;
+    background: #fbfcfe;
+    border: 1px solid #f67a24;
+    border-radius: 4px;
+    font-family: 'Raleway';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 20px;
+    text-align: center;
+    color: #f67a24;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.template .btn-use,
+.template .btn-save:hover {
+    padding: 12px 24px;
+    gap: 10px;
+    width: 127px;
+    height: 40px;
+    background: #f67a24;
+    border-radius: 4px;
+    font-family: 'Raleway';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 20px;
+    /* or 167% */
+
+    text-align: center;
+
+    /* white */
+
+    color: #fbfcfe;
+}
+.mt-75 {
+    margin-top: 75px;
+}
